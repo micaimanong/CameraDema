@@ -2,7 +2,7 @@
 //  imageViewViewController.h
 //  CameraDema
 //
-//  Created by Eric on 2017/2/14.
+//  Created by micaimanong on 2017/2/14.
 //  Copyright © 2017年 micaimanong. All rights reserved.
 //
 
