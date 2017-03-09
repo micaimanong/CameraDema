@@ -437,10 +437,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tian zhi (3TGBV9NCLK)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B7W4V3BR4S;
 				INFOPLIST_FILE = CameraDema/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CameraDema",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = micaimanong.CameraDema;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -454,6 +459,10 @@
 				DEVELOPMENT_TEAM = B7W4V3BR4S;
 				INFOPLIST_FILE = CameraDema/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CameraDema",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = micaimanong.CameraDema;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
