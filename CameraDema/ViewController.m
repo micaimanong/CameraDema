@@ -42,7 +42,6 @@
 
 - (void)viewDidLoad {
     self.view.backgroundColor = [UIColor blackColor];
-    
     self.backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,kMainScreenWidth, kMainScreenHeight - 120)];
     [self.view addSubview:self.backView];
     
@@ -62,7 +61,7 @@
     [button addTarget:self action:@selector(buttondown) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
-
+    
     CALayer *Mylayer=[CALayer layer];
     Mylayer.bounds=CGRectMake(10, (kMainScreenHeight - (kMainScreenWidth - 20)/1.6)/2, kMainScreenWidth - 20, (kMainScreenWidth - 20)/1.6);
     Mylayer.position=CGPointMake(kMainScreenWidth/2, (kMainScreenHeight - 120)/2);

@@ -64,23 +64,22 @@
     
    
     imageIm = [self image:imageIm scaleToSize:CGSizeMake(kMainScreenWidth, kMainScreenHeight)];
-    imageIm = [self imageFromImage:imageIm inRect:CGRectMake(10*2, (kMainScreenHeight - (kMainScreenWidth - 20) /1.6)/2*2, (kMainScreenWidth - 20)*2 , (kMainScreenWidth - 20)/1.6*2)];
+    imageIm = [self imageFromImage:imageIm inRect:rect];
      UIImageWriteToSavedPhotosAlbum(imageIm, self, nil, nil);
-    
-
-    UIImageView *imageView =[[UIImageView alloc] initWithFrame:CGRectMake(10, (kMainScreenHeight + 100- (kMainScreenWidth - 20) /1.6)/2, kMainScreenWidth - 20 , (kMainScreenWidth - 20)/1.6)];
+    imageViewViewController *imageView = [[imageViewViewController alloc]init];
     imageView.image = imageIm;
-    [self.view addSubview:imageView];
-
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:imageView];
+//    [self.navigationController pushViewController:nav animated:YES];
+    [self presentViewController:nav animated:YES completion:nil];
+   
 }
 
 //截取图片
 -(UIImage*)image:(UIImage *)imageI scaleToSize:(CGSize)size{
     
-    UIGraphicsBeginImageContextWithOptions(size, NO, 2.0);
+    UIGraphicsBeginImageContext(size);
     
     [imageI drawInRect:CGRectMake(0, 0, size.width, size.height)];
-    
     
     UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
     

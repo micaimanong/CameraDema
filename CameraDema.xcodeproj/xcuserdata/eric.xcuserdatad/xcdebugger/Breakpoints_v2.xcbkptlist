@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CameraDema/imageDetailViewController.m"
-            timestampString = "508839299.884379"
+            timestampString = "508758831.041127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "-image:scaleToSize:"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "-rightButton"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CameraDema/imageDetailViewController.m"
+            timestampString = "508759922.51432"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-rightButton"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
