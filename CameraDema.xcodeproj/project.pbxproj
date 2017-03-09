@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		07F040121E4C581F00370DA1 /* imageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F040111E4C581F00370DA1 /* imageDetailViewController.m */; };
-		07F0401C1E53087400370DA1 /* imageViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F0401B1E53087400370DA1 /* imageViewViewController.m */; };
 		07FFBF001E4B38020081361C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FFBEFF1E4B38020081361C /* main.m */; };
 		07FFBF031E4B38020081361C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FFBF021E4B38020081361C /* AppDelegate.m */; };
 		07FFBF061E4B38020081361C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FFBF051E4B38020081361C /* ViewController.m */; };
@@ -39,8 +38,6 @@
 /* Begin PBXFileReference section */
 		07F040101E4C581F00370DA1 /* imageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageDetailViewController.h; sourceTree = "<group>"; };
 		07F040111E4C581F00370DA1 /* imageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageDetailViewController.m; sourceTree = "<group>"; };
-		07F0401A1E53087400370DA1 /* imageViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageViewViewController.h; sourceTree = "<group>"; };
-		07F0401B1E53087400370DA1 /* imageViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageViewViewController.m; sourceTree = "<group>"; };
 		07FFBEFB1E4B38020081361C /* CameraDema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraDema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FFBEFF1E4B38020081361C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07FFBF011E4B38020081361C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,8 +110,6 @@
 				07FFBF051E4B38020081361C /* ViewController.m */,
 				07F040101E4C581F00370DA1 /* imageDetailViewController.h */,
 				07F040111E4C581F00370DA1 /* imageDetailViewController.m */,
-				07F0401A1E53087400370DA1 /* imageViewViewController.h */,
-				07F0401B1E53087400370DA1 /* imageViewViewController.m */,
 				07FFBF071E4B38020081361C /* Main.storyboard */,
 				07FFBF0A1E4B38020081361C /* Assets.xcassets */,
 				07FFBF0C1E4B38020081361C /* LaunchScreen.storyboard */,
@@ -286,7 +281,6 @@
 			files = (
 				07FFBF061E4B38020081361C /* ViewController.m in Sources */,
 				07FFBF031E4B38020081361C /* AppDelegate.m in Sources */,
-				07F0401C1E53087400370DA1 /* imageViewViewController.m in Sources */,
 				07FFBF001E4B38020081361C /* main.m in Sources */,
 				07F040121E4C581F00370DA1 /* imageDetailViewController.m in Sources */,
 			);

@@ -10,7 +10,5 @@
 
 @interface imageDetailViewController : UIViewController
 
-
-
 @property(nonatomic,strong)NSData *data;
 @end

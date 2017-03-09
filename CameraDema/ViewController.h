@@ -26,10 +26,6 @@
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer* previewLayer;
 
 /**
- *  记录开始的缩放比例
- */
-@property(nonatomic,assign)CGFloat beginGestureScale;
-/**
  *  最后的缩放比例
  */
 @property(nonatomic,assign)CGFloat effectiveScale;

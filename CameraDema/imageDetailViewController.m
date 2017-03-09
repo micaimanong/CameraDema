@@ -5,10 +5,9 @@
 //  Created by micaimanong on 2017/2/9.
 //  Copyright © 2017年 micaimanong. All rights reserved.
 //
-#define kMainScreenWidth [UIScreen mainScreen].bounds.size.width
-#define kMainScreenHeight  [UIScreen mainScreen].bounds.size.height
+#define SelfWidth [UIScreen mainScreen].bounds.size.width
+#define SelfHeight  [UIScreen mainScreen].bounds.size.height
 #import "imageDetailViewController.h"
-#import "imageViewViewController.h"
 
 @interface imageDetailViewController ()
 {
@@ -22,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
-    UIImageView *imageView =[[UIImageView alloc] initWithFrame:CGRectMake(0, -64, kMainScreenWidth, kMainScreenHeight)];
+    UIImageView *imageView =[[UIImageView alloc] initWithFrame:CGRectMake(0, -64, SelfWidth, SelfHeight)];
     imageView.image = [UIImage imageWithData:_data];
     [self.view addSubview:imageView];
    imageIm =[UIImage imageWithData:_data];
@@ -30,15 +29,15 @@
     
      NSLog(@"改变前图片的宽度为%f,图片的高度为%f",originalsize.width,originalsize.height);
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(15, kMainScreenHeight - 50, 40, 40);
+    button.frame = CGRectMake(15, SelfHeight - 50, 40, 40);
     [button setTitle:@"重拍" forState:UIControlStateNormal];
     [button setTintColor:[UIColor whiteColor]];
     [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
     CALayer *Mylayer=[CALayer layer];
-    Mylayer.bounds=CGRectMake(10, (kMainScreenHeight - (kMainScreenWidth - 20)/1.6)/2, kMainScreenWidth - 20, (kMainScreenWidth - 20)/1.6);
-    Mylayer.position=CGPointMake(kMainScreenWidth/2, (kMainScreenHeight - 120)/2);
+    Mylayer.bounds=CGRectMake(10, (SelfHeight - (SelfWidth - 20)/1.6)/2, SelfWidth - 20, (SelfWidth - 20)/1.6);
+    Mylayer.position=CGPointMake(SelfWidth/2, (SelfHeight - 120)/2);
     Mylayer.masksToBounds=YES;
     Mylayer.borderWidth=1;
     Mylayer.borderColor=[UIColor whiteColor].CGColor;
@@ -48,7 +47,7 @@
     
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    rightButton.frame = CGRectMake(kMainScreenWidth - 90, kMainScreenHeight - 50, 80, 40);
+    rightButton.frame = CGRectMake(SelfWidth - 90, SelfHeight - 50, 80, 40);
     [rightButton setTitle:@"使用照片" forState:UIControlStateNormal];
     [rightButton setTintColor:[UIColor whiteColor]];
     [rightButton addTarget:self action:@selector(rightButton) forControlEvents:UIControlEventTouchUpInside];
@@ -58,17 +57,18 @@
 }
 
 -(void)rightButton{
-    
-    CGRect rect =CGRectMake(10, (kMainScreenHeight - (kMainScreenWidth - 20) /1.6)/2, kMainScreenWidth - 20 , (kMainScreenWidth - 20)/1.6);
- 
-    
    
-    imageIm = [self image:imageIm scaleToSize:CGSizeMake(kMainScreenWidth, kMainScreenHeight)];
-    imageIm = [self imageFromImage:imageIm inRect:CGRectMake(10*2, (kMainScreenHeight - (kMainScreenWidth - 20) /1.6)/2*2, (kMainScreenWidth - 20)*2 , (kMainScreenWidth - 20)/1.6*2)];
+    
+    //截取照片，截取到自定义框内的照片
+    imageIm = [self image:imageIm scaleToSize:CGSizeMake(SelfWidth, SelfHeight)];
+    //应为在展开相片时放大的两倍，截取时也要放大两倍
+    imageIm = [self imageFromImage:imageIm inRect:CGRectMake(10*2, (SelfHeight - (SelfWidth - 20) /1.6)/2*2, (SelfWidth - 20)*2 , (SelfWidth - 20)/1.6*2)];
+    
+    //将图片存储到相册
      UIImageWriteToSavedPhotosAlbum(imageIm, self, nil, nil);
     
-
-    UIImageView *imageView =[[UIImageView alloc] initWithFrame:CGRectMake(10, (kMainScreenHeight + 100- (kMainScreenWidth - 20) /1.6)/2, kMainScreenWidth - 20 , (kMainScreenWidth - 20)/1.6)];
+   //截取之后将图片显示在照相时页面，和拍摄时的照片进行像素对比
+    UIImageView *imageView =[[UIImageView alloc] initWithFrame:CGRectMake(10, (SelfHeight - (SelfWidth - 20) /1.6)/2  + 170, SelfWidth - 20 , (SelfWidth - 20)/1.6)];
     imageView.image = imageIm;
     [self.view addSubview:imageView];
 
@@ -76,8 +76,14 @@
 
 //截取图片
 -(UIImage*)image:(UIImage *)imageI scaleToSize:(CGSize)size{
-    
-    UIGraphicsBeginImageContextWithOptions(size, NO, 2.0);
+   /*
+    UIGraphicsBeginImageContextWithOptions(CGSize size, BOOL opaque, CGFloat scale)
+    CGSize size：指定将来创建出来的bitmap的大小
+    BOOL opaque：设置透明YES代表透明，NO代表不透明
+    CGFloat scale：代表缩放,0代表不缩放
+    创建出来的bitmap就对应一个UIImage对象
+    */
+    UIGraphicsBeginImageContextWithOptions(size, NO, 2.0); //此处将画布放大两倍，这样在retina屏截取时不会影响像素
     
     [imageI drawInRect:CGRectMake(0, 0, size.width, size.height)];
     
